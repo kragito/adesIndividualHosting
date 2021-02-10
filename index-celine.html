@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="styles/tracking.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/add track.js"></script>
+    <script>
+        /*$(".close").on("click", () => {
+            console.log("yeet")
+            $(".track").remove()
+            //$(this).parent().remove()
+        })*/
+        $("#main").delegate(".close", "click", function () {
+                $(this).closest('.track').remove();
+            });
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div class="track">
+            <button class="close">X</button>
+            <form action="get">
+                <label for="companyid">Company ID</label>
+                <input type="text" id="companyid">
+
+                <button type="submit">Search</button><br>
+            </form>
+            <label for="queueid">Queue ID</label>
+            <select name="queueid" id="queueid">
+            </select>
+
+            <label for="hide">Hide inactive</label>
+            <input type="checkbox" name="hide" id="hide" checked>
+        </div>
+        <button id="add" onclick=add()>Add tracking</button>
+    </div>
+</body>
+<footer>
+    <div class="container-fluid padding">
+    <div class="row text-center">
+        <div class="col-md-6">
+                <hr class="light">
+                <P>999888777</P>
+                <p>NLB@gmail.com</p>
+                <p>Dover Drive 16 Singapore, 730696</p>     
+        </div>
+        <div class="col-md-6">
+            <hr class="light">
+            <h5>Opening Times</h5>
+            <hr class="light">
+            <p>Monday to Saturday: 9am-10pm</p>
+            <p>Sunday and Public holidays: Closed</p>
+        </div>
+        <div class="col-12">
+            <hr class="light-100">
+            <h5>&copy; NLB.com</h5>
+        </div>
+    </div>
+    </div>
+    </footer>
+</html>
